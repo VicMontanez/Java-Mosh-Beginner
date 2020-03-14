@@ -6,6 +6,6 @@ public class Main {
 	byte age = 30;
 	long viewsCount = 3_123_456_789L;
 	float price = 10.99F;
-	float price2 = 10.89F;
+	char letter = 'A';
     }
 }
