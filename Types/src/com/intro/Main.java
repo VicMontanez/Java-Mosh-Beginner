@@ -10,7 +10,8 @@ public class Main {
         //int result = (int)Math.floor(1.1F);
         //int result = Math.max(1, 2);
         //double result = Math.random() * 100;
-        int result = (int) Math.round(Math.random() * 100);
+        //int result = (int) Math.round(Math.random() * 100);
+        int result = (int) (Math.random() * 100);
         System.out.println(result);
 
 
