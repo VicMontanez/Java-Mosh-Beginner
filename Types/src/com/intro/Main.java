@@ -1,13 +1,12 @@
 package com.intro;
 
-import java.awt.*;
-import java.util.Date;
 
 public class Main {
 
     public static void main(String[] args) {
-      String message = "Hello \"Mosh\"";
-
-      System.out.println(message);
+        int [] numbers = new int[5];
+        numbers[0] = 1;
+        numbers[1] = 2;
+        System.out.println(numbers);
     }
 }
