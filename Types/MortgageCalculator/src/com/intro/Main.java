@@ -13,6 +13,12 @@ public class Main {
         System.out.print("Length of loan (Years): ");
         int years = scanner.nextInt();
 
+        int paymentNumber = 12 * years;
+
+        float monthlyRate = rate / 100 / 12;
+
+        double mortgage = principal * (monthlyRate * Math.pow(1 + monthlyRate, paymentNumber) / (Math.pow(1 + monthlyRate, paymentNumber) - 1));
+
 
 
     }
