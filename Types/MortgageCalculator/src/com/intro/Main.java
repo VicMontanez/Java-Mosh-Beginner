@@ -10,6 +10,8 @@ public class Main {
         int principal = scanner.nextInt();
         System.out.print("Interest Rate: ");
         float rate = scanner.nextFloat();
+        System.out.print("Length of loan (Years): ");
+        int years = scanner.nextInt();
 
 
 
