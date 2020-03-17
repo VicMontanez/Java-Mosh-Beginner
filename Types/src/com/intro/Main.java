@@ -1,13 +1,15 @@
 package com.intro;
 
 
-import java.text.NumberFormat;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        String result = NumberFormat.getPercentInstance().format(0.1);
-        System.out.println(result);
+        Scanner scanner = new Scanner(System.in);
+        byte age = scanner.nextByte();
+        System.out.println("You are " + age);
 
 
 
