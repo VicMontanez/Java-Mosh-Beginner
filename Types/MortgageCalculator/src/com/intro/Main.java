@@ -19,7 +19,7 @@ public class Main {
 
         double mortgage = principal * (monthlyRate * Math.pow(1 + monthlyRate, paymentNumber) / (Math.pow(1 + monthlyRate, paymentNumber) - 1));
 
-
+        System.out.println(mortgage);
 
     }
 }
