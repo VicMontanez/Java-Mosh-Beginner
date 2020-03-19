@@ -12,8 +12,14 @@ public class Main {
 	    Scanner scanner = new Scanner(System.in);
         System.out.print("Number: ");
         final int userNum = scanner.nextInt();
-        System.out.println(userNum);
-
+        if (userNum % 3 == 0 && userNum % 5 == 0)
+            System.out.println("FIZZBUZZ");
+        else if(userNum % 5 == 0)
+            System.out.println("FIZZ");
+        else if(userNum % 3 == 0)
+            System.out.println("BUZZ");
+        else
+            System.out.println(userNum);
 
     }
 }
