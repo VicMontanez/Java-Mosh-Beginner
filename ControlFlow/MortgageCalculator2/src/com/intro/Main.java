@@ -8,12 +8,17 @@ public class Main {
     //Interest rate greater than 0 or less than or equal to 30
     //Years  value between 1 and 30
     public static void main(String[] args) {
+
+        int principal = 0;
         Scanner scanner = new Scanner(System.in);
 
-            System.out.print("Principal: ");
-            int principal = scanner.nextInt();
-            if (principal < 1000 || principal > 1000000)
-                System.out.println("Enter a value between 1K - 1M");
+            while (true) {
+                System.out.print("Principal: ");
+                principal = scanner.nextInt();
+                if (principal < 1000 || principal > 1000000)
+                    System.out.println("Enter a value between 1K - 1M");
+                break;
+            }
             System.out.print("Interest Rate: ");
             float rate = scanner.nextFloat();
             if (rate < 0 || rate > 30)
