@@ -3,6 +3,11 @@ package com.intro;
 public class Main {
 
     public static void main(String[] args) {
-	System.out.println("this is a test");
+        greetUser("Mosh");
+
+    }
+
+    public static void greetUser(String name){
+        System.out.println("Hello" + name);
     }
 }
