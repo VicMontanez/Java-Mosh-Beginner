@@ -34,11 +34,8 @@ public class Main {
                         continue;
                     }
 
-                    int paymentNumber = 12 * years;
 
-                    float monthlyRate = rate / 100 / 12;
-
-                    double mortgage = principal * (monthlyRate * Math.pow(1 + monthlyRate, paymentNumber) / (Math.pow(1 + monthlyRate, paymentNumber) - 1));
+                    double mortgage = calculateMortgage(principal, rate, years);
 
                     String mortgageFormatted = NumberFormat.getCurrencyInstance().format((mortgage));
                     System.out.println("Mortgage is: " + mortgageFormatted);
@@ -49,6 +46,17 @@ public class Main {
             break;
 
         }
+    }
+
+    public static double calculateMortgage(int principal,
+                                           float rate,
+                                           int years) {
+        float monthlyRate = rate / 100 / 12;
+        short paymentNumber = (short)(12 * years);
+
+        double mortgage = principal * (monthlyRate * Math.pow(1 + monthlyRate, paymentNumber) / (Math.pow(1 + monthlyRate, paymentNumber) - 1));
+
+        return mortgage;
     }
 }
 
