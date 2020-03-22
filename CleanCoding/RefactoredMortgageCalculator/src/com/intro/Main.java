@@ -18,11 +18,11 @@ public class Main {
 
                     String mortgageFormatted = NumberFormat.getCurrencyInstance().format((mortgage));
                     System.out.println("Mortgage is: " + mortgageFormatted);
-
-                    double payments = paymentSchedule(principal, rate, years, mortgage);
-                    String paymentsFormatted = NumberFormat.getCurrencyInstance().format((payments));
-                    System.out.println("Payment Schedule: " + paymentsFormatted);
-
+                    for ( short month = 1; month <= years * 12; month++) {
+                        double payments = paymentSchedule(principal, rate, years, mortgage);
+                        String paymentsFormatted = NumberFormat.getCurrencyInstance().format((payments));
+                        System.out.println("Payment Schedule: " + paymentsFormatted);
+                    }
                 }
 
 
