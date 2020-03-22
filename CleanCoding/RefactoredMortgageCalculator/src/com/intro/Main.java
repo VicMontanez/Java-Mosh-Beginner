@@ -26,12 +26,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         double value;
         while (true) {
-            System.out.print("Interest Rate: ");
+            System.out.print(prompt);
             value = scanner.nextFloat();
-            if (value < min || value > max) {
-                System.out.println("Enter a value between " + min + " and " + max);
-                continue;
-            }
+            if (value >= min || value <= max)
+                break;
+            System.out.println("Enter a value between " + min + " and " + max);
+        }
 
             return value;
     }
