@@ -19,6 +19,10 @@ public class Main {
                     String mortgageFormatted = NumberFormat.getCurrencyInstance().format((mortgage));
                     System.out.println("Mortgage is: " + mortgageFormatted);
 
+//                    double payments = paymentSchedule(principal, rate, years, mortgage);
+//                    String paymentsFormatted = NumberFormat.getCurrencyInstance().format((payments));
+//                    System.out.println("Payment Schedule: " + paymentsFormatted);
+
                 }
 
 
@@ -45,6 +49,18 @@ public class Main {
         double mortgage = principal * (monthlyRate * Math.pow(1 + monthlyRate, paymentNumber) / (Math.pow(1 + monthlyRate, paymentNumber) - 1));
 
         return mortgage;
+    }
+
+    public static double paymentSchedule(int principal, float rate, int years, double mortgage) {
+        float monthlyRate = rate / 100 / 12;
+        int paymentsNum = years * 12;
+        double paymentsMade = mortgage - principal;
+
+
+        double payments = principal * Math.pow(1 + monthlyRate, paymentsNum) - Math.pow(1 + monthlyRate, paymentsMade) / (Math.pow(1 + monthlyRate, paymentsNum) - 1);
+
+        return payments;
+
     }
 }
 
