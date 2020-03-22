@@ -17,11 +17,19 @@ public class Main {
                     double mortgage = calculateMortgage(principal, rate, years);
 
                     String mortgageFormatted = NumberFormat.getCurrencyInstance().format((mortgage));
-                    System.out.println("Mortgage is: " + mortgageFormatted);
+        System.out.println();
+        System.out.println("MORTGAGE");
+        System.out.println("--------");
+        System.out.println("Mortgage is: " + mortgageFormatted);
+
+        System.out.println();
+        System.out.println("PAYMENT SCHEDULE");
+        System.out.println("-----------");
+
                     for ( short month = 1; month <= years * 12; month++) {
-                        double payments = paymentSchedule(principal, rate, years, mortgage);
-                        String paymentsFormatted = NumberFormat.getCurrencyInstance().format((payments));
-                        System.out.println("Payment Schedule: " + paymentsFormatted);
+                        double payments = paymentSchedule(principal, rate, years, month);
+                        System.out.println(NumberFormat.getCurrencyInstance().format((payments)));
+
                     }
                 }
 
@@ -51,13 +59,13 @@ public class Main {
         return mortgage;
     }
 
-    public static double paymentSchedule(int principal, float rate, int years, double mortgage) {
+    public static double paymentSchedule(int principal, float rate, int years, short numberOfPaymentsMade) {
         float monthlyRate = rate / 100 / 12;
-        int paymentsNum = years * 12;
-        double paymentsMade = mortgage - principal;
+        short paymentNumber = (short)(12 * years);
 
 
-        double payments = principal * Math.pow(1 + monthlyRate, paymentsNum) - Math.pow(1 + monthlyRate, paymentsMade) / (Math.pow(1 + monthlyRate, paymentsNum) - 1);
+
+        double payments = principal * (Math.pow(1 + monthlyRate, paymentNumber) - Math.pow(1 + monthlyRate, numberOfPaymentsMade))/ (Math.pow(1 + monthlyRate, numberOfPaymentsMade) - 1);
 
         return payments;
 
