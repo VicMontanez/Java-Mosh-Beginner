@@ -12,11 +12,9 @@ public class Main {
         float rate = (float)readNumber("Annual Interest Rate: ", 1, 30);
         int years = (int)readNumber("Period (Years): ", 1, 30);
 
+        double mortgage = calculateMortgage(principal, rate, years);
 
-
-                    double mortgage = calculateMortgage(principal, rate, years);
-
-                    String mortgageFormatted = NumberFormat.getCurrencyInstance().format((mortgage));
+        String mortgageFormatted = NumberFormat.getCurrencyInstance().format((mortgage));
         System.out.println();
         System.out.println("MORTGAGE");
         System.out.println("--------");
